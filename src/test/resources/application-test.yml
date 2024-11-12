@@ -1,0 +1,29 @@
+spring:
+  liquibase:
+    enabled: false
+  test:
+    database:
+      replace: none
+  datasource:
+    url: jdbc:h2:mem:testdb;MODE=MySQL;
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: ""
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    generate-ddl: true
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: update
+      format_sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        globally_quoted_identifiers: true
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  sql:
+    init:
+      mode: always

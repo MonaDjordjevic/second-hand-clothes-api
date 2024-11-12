@@ -1,0 +1,90 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1.0.1-insert-users
+      author: mona
+      changes:
+        - insert:
+            tableName: user
+            columns:
+              - column:
+                  name: id
+                  value: "1"
+              - column:
+                  name: full_name
+                  value: "John Doe"
+              - column:
+                  name: address
+                  value: "123 Main St"
+              - column:
+                  name: username
+                  value: "johndoe"
+              - column:
+                  name: password
+                  value: "$2a$12$BiEGGCdGUvOCyhrtyAQCx.z6qMkqHYxSFbb.L9r9WzMBCzjb0Qm0i"
+
+        - insert:
+            tableName: user
+            columns:
+              - column:
+                  name: id
+                  value: "2"
+              - column:
+                  name: full_name
+                  value: "Jane Smith"
+              - column:
+                  name: address
+                  value: "456 Elm St"
+              - column:
+                  name: username
+                  value: "janesmith"
+              - column:
+                  name: password
+                  value: "$2a$12$aaSLeFfVbVc2e4ScJFwO2u0AwWzPJOaiQHYqNpksvrf8uNa6cypwK"
+
+  - changeSet:
+      id: 1.0.1-insert-garments
+      author: mona
+      changes:
+        - insert:
+            tableName: garment
+            columns:
+              - column:
+                  name: id
+                  value: "1"
+              - column:
+                  name: type
+                  value: "Shirt"
+              - column:
+                  name: description
+                  value: "Blue cotton shirt"
+              - column:
+                  name: publisher_id
+                  value: "1"
+              - column:
+                  name: size
+                  value: "M"
+              - column:
+                  name: price
+                  valueNumeric: 29.99
+
+        - insert:
+            tableName: garment
+            columns:
+              - column:
+                  name: id
+                  value: "2"
+              - column:
+                  name: type
+                  value: "Pants"
+              - column:
+                  name: description
+                  value: "Black jeans"
+              - column:
+                  name: publisher_id
+                  value: "2"
+              - column:
+                  name: size
+                  value: "L"
+              - column:
+                  name: price
+                  valueNumeric: 49.99

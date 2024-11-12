@@ -1,0 +1,32 @@
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+.idea_modules/
+
+# Maven target directory
+target/
+
+# Logs
+*.log
+
+# OS-specific files
+.DS_Store   # macOS
+
+# Spring Boot specific
+spring-boot-devtools/
+
+# Maven wrapper
+.mvn/
+!/.mvn/wrapper/maven-wrapper.jar
+
+# Java class files
+*.class
+
+# Java JAR files
+*.jar
+*.war
+
+# Temporary files
+*.swp
+*.swo

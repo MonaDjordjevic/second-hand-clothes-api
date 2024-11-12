@@ -1,0 +1,40 @@
+spring:
+  application:
+    name: second-hand-clothes
+
+  main:
+    allow-bean-definition-overriding: true
+
+  datasource:
+    hikari:
+      connection-timeout: 30000
+    url: jdbc:mysql://localhost:3306/second_hand_clothes
+    username: root
+    password: password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  liquibase:
+    enabled: true
+    drop-first: false
+    change-log: classpath:/db/changelog/db.changelog-local.yaml
+
+server:
+  servlet:
+    context-path: /second-hand-clothes
+  error:
+    include-message: always
+    include-binding-errors: always
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+
+logging:
+  level:
+    root: INFO
+    com.marketplace: DEBUG
+    org.springframework.security: DEBUG
+
+jwt:
+  secret: "c2VjcmV0MTIzc2VjcmV0MTIzc2VjcmV0MTIzc2VjcmV0MTIz"
+

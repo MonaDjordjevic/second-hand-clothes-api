@@ -1,0 +1,27 @@
+services:
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: second_hand_clothes
+    ports:
+      - "3307:3306"
+    healthcheck:
+      test: [ "CMD", "mysql", "-h", "localhost", "-u", "root", "-ppassword", "-e", "SELECT 1" ]
+      interval: 10s
+      retries: 5
+      start_period: 30s
+      timeout: 10s
+
+  app:
+    build: .
+    image: second-hand-clothes-api:latest
+    ports:
+      - "8080:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/second_hand_clothes
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: password
